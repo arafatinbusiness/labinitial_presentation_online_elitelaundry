@@ -33,11 +33,11 @@ export const SLIDES: Slide[] = fileList.map((file, index) => {
     id: `slide-${index}-${name.replace(' ', '-')}`,
     name: name,
     type: isVideo ? SlideType.VIDEO : SlideType.IMAGE,
-    src: `/assets/${file}`, // Use local media files
+    src: `assets/${file}`, // Use local media files (relative path)
   };
 
   if (slide.type === SlideType.IMAGE) {
-    slide.placeholderSrc = `/assets/${file}`; // Use same image for placeholder
+    slide.placeholderSrc = `assets/${file}`; // Use same image for placeholder
   }
 
   return slide;
